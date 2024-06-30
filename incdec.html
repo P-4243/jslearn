@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Homepage with Navbar and Cards</title>
+<link rel="stylesheet" href="inc.css">
+</head>
+<body>
+    <div id="btncontain">
+    <label id="lab">fav No.</label>
+    <button id="dec" class="bt">Decrease</button>
+    <button id="res" class="bt">Reset</button>
+    <button id="inc" class="bt">Increase</button>
+</div>
+<div id="btncontain">
+    <button id="play-again" class="bt2">Play Again</button>
+</div>
+
+</body>
+<p style="text-align:center; "><a href="dice.html" style="font-size:1.5em; color:white; text-decoration:none;">See Next</a></p>
+
+
+<script>
+
+const countLabel=document.getElementById("lab");
+let fav=window.prompt("Enter your favourite integer `${username}`:");
+let count=Number(fav);
+document.getElementById("lab").textContent=count;
+const increase=document.getElementById("inc").onclick=function(){
+    count++;
+    countLabel.textContent=count;
+}
+const decrease=document.getElementById("dec").onclick=function()
+{
+    count--;
+    countLabel.textContent=count;
+}
+const reset=document.getElementById("res").onclick=function()
+{
+    count=Number(fav);
+    countLabel.textContent=count;
+}
+document.getElementById("play-again").onclick = function() {
+    fav = window.prompt("Enter your favourite integer :");
+    count = Number(fav);
+    countLabel.textContent = count;
+}
+</script>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Homepage with Navbar and Cards</title>
+<style>
+    body {
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: center;
+        margin: 0;
+        align-items: center;
+    }
+    .bt {
+        background-color: rgb(76, 134, 134);
+        color: rgb(255, 255, 255);
+        font-weight: 700;
+        font-size: 2em;
+        border: 3px solid rgb(243, 239, 239);
+        padding: 20px 40px;
+        border-radius: 10px;
+        cursor: grab;
+    }
+    .bt:hover {
+        background-color: aqua;
+        transition-duration: 0.25s;
+    }
+    .lb {
+        color: white;
+        font-size: 4em; /* Increased font size */
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+    <button id="bt" class="bt">Roll</button>
+    <label id="lab" class="lb">You get</label>
+    
+<script>
+    const l = document.getElementById("lab");
+    const button = document.getElementById("bt");
+    const dieFaces = ['\u2680', '\u2681', '\u2682', '\u2683', '\u2684', '\u2685'];
+
+    button.onclick = function() {
+        let ran = Math.floor(Math.random() * 6);
+        l.textContent = 'You get ' + dieFaces[ran];
+    }
+</script>
+</body>
+</html>
